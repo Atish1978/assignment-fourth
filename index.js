@@ -1,82 +1,97 @@
 // Propblem 1:
+// Create a functiion which will retun a value by multiplying 3 with the inputted value then adding 10 then dividing 2 then subtructing 5.
+// Input value must be a POSITIVE NUMBER.
 
-// function mindGame(positiveNumber){
+function mindGame(positiveNumber) {
 
-// let totalValue=(((positiveNumber*3)+10)/2)-5;
+    if ((typeof positiveNumber) !== "number" || positiveNumber < 0) {
+        return 'Please input a valid data. Data must be a positive number.';
+    }
+    else {
+        let totalValue = (((positiveNumber * 3) + 10) / 2) - 5;
+        return totalValue;
+    }
 
-// return totalValue;
-// }
+}
 
-// // console.log(mindGame(50));
+// Problem 2:
+// Create a function which will calculate the total number of character of a string. If the number of character of the string is an odd number then the function will retun 'Odd' and if the number of character of the string is an even number then the funtion will return 'Even'.
+// Input value must be a STRING.
 
-// // Problem 2:
+function evenOdd(inputString) {
 
-// function evenOdd(inputString){
+    if ((typeof inputString) !== "string") {
+        return 'Please input a valid data. Data must be a string.';
+    }
+    else if (inputString.length % 2 == 0) {
+        return 'Even';
+    }
+    else {
+        return 'Odd';
+    }
 
-//     if (inputString.length%2==0){
-//         return 'Even';
-//     }
-//     else {
-//         return 'Odd';
-//     }
-
-// }
-
-// console.log(evenOdd('atishs'));
+}
 
 // Problem 3:
+// Create a fuction. If the difference between input value and 7 is less than 7 then the function will return the difference and if the difference between input value and 7 is greater than 7 then the function will double of the inputted value. 
+// input vaule must be a NUMBER.
 
-// function isLGSeven(compareSeven){
+function isLGSeven(compareSeven) {
 
-    
-//     let difference=Math.abs(compareSeven-7);
+    if ((typeof compareSeven) !== "number") {
+        return 'Please input a valid data. Data must be a number.';
+    }
+    else if (compareSeven - 7 < 7) {
+        return compareSeven - 7;
+    }
+    else {
+        return compareSeven * 2;
+    }
 
-//     if (difference<7){
-//         return difference;
-//     }
-//     else {
-//         return difference*2;
-//        }
-  
-// }
-
-// console.log(isLGSeven(14));
+}
 
 // Problem 4:
+// Create of function where the type of input data will be an array of numbers. Among the array elements which are negative numbers they will be treated as Bad data. and which are positive numbers they will be treated as Good data. The function will retun the total number of array elements which are treated as Bad data. 
 
-// function findingBadData(goodBadArr){
+function findingBadData(goodBadArr) {
+    if (Array.isArray(goodBadArr)) {
 
-//     let badData=[];
+        let badData = [];
 
-//     for(let i=0; i<goodBadArr.length; i++){
-//     if(goodBadArr[i]<0){
-//         badData.push(goodBadArr[i])
-// }
-// }
-// return badData.length;
-// }
+        for (let i = 0; i < goodBadArr.length; i++) {
+            if (goodBadArr[i] < 0) {
+                badData.push(goodBadArr[i]);
+            }
+        }
+        return badData.length;
+    }
+    else {
 
-// let data=[1, 3, -4, 3, -56, 45, 80];
-// console.log(findingBadData(data));
+        return 'Please input a valid data. Data must be an Array if numbers.';
+    }
+}
+
+let data = [1, 'jgjh', -4, 3, -56, 45, 80];
+console.log(findingBadData(data));
 
 // Problem 5:
 
-function gemsToDiamond(firstFrGems, secondFrGems, thirdFrGems){
+function gemsToDiamond(firstFrGems, secondFrGems, thirdFrGems) {
 
-    const firstFrGPower=firstFrGems*21;
-    const secondFrGPower=secondFrGems*32;
-    const thirdFrGPower=thirdFrGems*43;
+    const firstFrGPower = firstFrGems * 21;
+    const secondFrGPower = secondFrGems * 32;
+    const thirdFrGPower = thirdFrGems * 43;
 
-    let totalDiamond=firstFrGPower+secondFrGPower+thirdFrGPower;
+    let totalDiamond = firstFrGPower + secondFrGPower + thirdFrGPower;
 
-    if(totalDiamond>2000){
+    if (totalDiamond > 2000) {
 
-    let restTotalDiamond=totalDiamond-2000;
+        let restTotalDiamond = totalDiamond - 2000;
 
-    return restTotalDiamond;
+        return restTotalDiamond;
     }
 
-    else{
+    else {
 
         return totalDiamond;
     }
@@ -85,5 +100,7 @@ function gemsToDiamond(firstFrGems, secondFrGems, thirdFrGems){
 
 
 }
-
-console.log(gemsToDiamond(100, 5, 1));
+// console.log(mindGame(765));
+// console.log(evenOdd('s'));
+// console.log(isLGSeven(7));
+// console.log(gemsToDiamond(100, 5, 1));
